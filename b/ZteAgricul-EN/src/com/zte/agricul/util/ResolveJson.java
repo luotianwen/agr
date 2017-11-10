@@ -180,7 +180,7 @@ public class ResolveJson {
 					cropBean.setName(jsonArray.getJSONObject(i).optString("name"));
 					cropBean.setVerData(jsonArray.getJSONObject(i).optString("verData"));
 					Logger.d("aaaa", "time==="+cropBean.getTime().toString());
-					if ("天气数据".equals(jsonArray.getJSONObject(i).optString("name"))) {
+					if ("WeatherData".equals(jsonArray.getJSONObject(i).optString("name"))) {
 						JSONArray jsonArray6 = jsonArray.getJSONObject(i).getJSONArray("list1");
 						List<WeatherBean >  weatherBeans = new ArrayList<WeatherBean>();
 						for (int j = 0; j < jsonArray6.length(); j++) {
@@ -226,7 +226,7 @@ public class ResolveJson {
 			chartInfo.setResult(cropBeans);
 		} catch (JSONException e) {
 			e.printStackTrace();
-			return null;
+			return chartInfo;
 		}
 		return chartInfo;
 	}
