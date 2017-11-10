@@ -238,11 +238,27 @@ public class PlotChartAdapter extends BaseAdapter {
 		}
 		}
 		int aaa =0;
+		if(null!=line2&&null!=line1){
+			if (line1.size()>line2.size()) {
+				aaa = line1.size();
+			}else {
+				aaa=line2.size();
+			}
+		}
+		else{
+			if(null!=line1) {
+				aaa = line1.size();
+			}
+			if(null!=line2) {
+				aaa = line2.size();
+			}
+		}
+		/*int aaa =0;
 		if (line1.size()>line2.size()) {
 			aaa = line1.size();
 		}else {
 			aaa=line2.size();
-		}
+		}*/
 		
 		for (int i = 0; i < (aaa-time.size()+5); i++) {
 			dayLabels.add("");

@@ -113,7 +113,7 @@ public class PlotChartAdapter extends BaseAdapter {
 					.findViewById(R.id.edit_plot1);
 		
 		int type =1 ;
-		if ("天气数据".equals(mBeans.get(position).getName())) {
+		if ("WeatherData".equals(mBeans.get(position).getName())) {
 			setDayChartData3(spline_chart1,mBeans.get(position).getWeatherList(),
 			mBeans.get(position).getTime(), mBeans
 			.get(position).getVerData(), mBeans
@@ -237,13 +237,23 @@ public class PlotChartAdapter extends BaseAdapter {
 			}
 		}
 		}
+
 		int aaa =0;
-		if (line1.size()>line2.size()) {
-			aaa = line1.size();
-		}else {
-			aaa=line2.size();
+		if(null!=line2&&null!=line1){
+			if (line1.size()>line2.size()) {
+				aaa = line1.size();
+			}else {
+				aaa=line2.size();
+			}
 		}
-		
+		else{
+			if(null!=line1) {
+				aaa = line1.size();
+			}
+			if(null!=line2) {
+				aaa = line2.size();
+			}
+		}
 		for (int i = 0; i < (aaa-time.size()+5); i++) {
 			dayLabels.add("");
 		}
