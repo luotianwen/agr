@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey_10"
+    android:orientation="vertical" >
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/grey_line" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:background="@color/white"
+        android:orientation="horizontal" >
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2" >
+
+            <TextView
+                android:id="@+id/time_title1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_toLeftOf="@+id/log_delete"
+                android:drawableLeft="@drawable/grow_guangai_date"
+                android:drawablePadding="5dp"
+                android:paddingLeft="8dp"
+                android:paddingTop="8dp"
+                android:textColor="@color/grey_7f" />
+
+            <ImageView
+                android:id="@+id/log_delete1"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="4dp"
+                android:layout_marginTop="4dp"
+                android:src="@drawable/log_delete" />
+
+            <LinearLayout
+                android:id="@+id/layout_grow_item_1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/time_title1"
+                android:orientation="vertical"
+                android:padding="8dp" >
+
+                <TextView
+                    android:id="@+id/txt_time1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="17dp"
+                    android:text="2015-09-01"
+                    android:textColor="@color/grey_7f" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp" >
+
+                    <ImageView
+                        android:id="@+id/time_view1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingRight="5dp"
+                        android:paddingTop="2dp"
+                        android:src="@drawable/grow_guangai_time" />
+
+                    <TextView
+                        android:id="@+id/txt_content1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:maxLines="3"
+                        android:textColor="@color/grey_7f" />
+                </LinearLayout>
+
+                <com.zte.agricul.view.GridViewToScrollView
+                    android:id="@+id/item_grow_img_grid1"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:cacheColorHint="#00000000"
+                    android:divider="@null"
+                    android:dividerHeight="0.0dip"
+                    android:fadingEdge="none"
+                    android:horizontalSpacing="2dp"
+                    android:listSelector="#00000000"
+                    android:numColumns="3"
+                    android:scrollingCache="false"
+                    android:verticalSpacing="2dp" >
+                </com.zte.agricul.view.GridViewToScrollView>
+            </LinearLayout>
+        </RelativeLayout>
+
+        <View
+            android:layout_width="1px"
+            android:layout_height="match_parent"
+            android:background="@color/grey_line" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/white"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:orientation="vertical"
+                android:padding="5dp" >
+
+                <TextView
+                    android:id="@+id/compare_time"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="2015.09.01"
+                    android:textColor="@color/grey_7f"
+                    android:textSize="@dimen/text_size_12" />
+
+                <TextView
+                    android:id="@+id/grow_type"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="5dp"
+                    android:drawableTop="@drawable/grow_shengzhang_jiaoguan"
+                    android:gravity="center"
+                    android:textColor="@color/grey_7f" />
+
+                <TextView
+                    android:id="@+id/edit1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/green_5e"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:textColor="@color/white"
+                    android:visibility="gone" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <View
+            android:layout_width="1px"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:background="@color/grey_line" />
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2" >
+
+            <TextView
+                android:id="@+id/time_title2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/grow_guangai_date"
+                android:drawablePadding="5dp"
+                android:textColor="@color/grey_7f" 
+                android:paddingLeft="8dp"
+                android:paddingTop="8dp"/>
+
+            <ImageView
+                android:id="@+id/log_delete2"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="4dp"
+                android:layout_marginTop="4dp"
+                android:src="@drawable/log_delete" />
+
+            <LinearLayout
+                android:layout_below="@+id/time_title2"
+                android:id="@+id/layout_grow_item_2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:orientation="vertical"
+                android:padding="8dp" >
+
+                <TextView
+                    android:id="@+id/txt_time2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="17dp"
+                    android:text="2015-09-01"
+                    android:textColor="@color/grey_7f" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp" >
+
+                    <ImageView
+                        android:id="@+id/time_view2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingRight="5dp"
+                        android:paddingTop="2dp"
+                        android:src="@drawable/grow_guangai_time" />
+
+                    <TextView
+                        android:id="@+id/txt_content2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/grey_7f" />
+                </LinearLayout>
+
+                <com.zte.agricul.view.GridViewToScrollView
+                    android:id="@+id/item_grow_img_grid2"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:cacheColorHint="#00000000"
+                    android:divider="@null"
+                    android:dividerHeight="0.0dip"
+                    android:fadingEdge="none"
+                    android:horizontalSpacing="2dp"
+                    android:listSelector="#00000000"
+                    android:numColumns="3"
+                    android:scrollingCache="false"
+                    android:verticalSpacing="2dp" >
+                </com.zte.agricul.view.GridViewToScrollView>
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,127 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey_10" >
+
+    <LinearLayout
+        android:id="@+id/top_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:id="@+id/rlCommenTitle"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/title_bar_height"
+            android:background="@color/green_85"
+            android:gravity="center_vertical"
+            android:paddingTop="20dp" >
+
+            <TextView
+                android:id="@+id/leftTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="5dp"
+                android:drawableLeft="@drawable/logout_btn"
+                android:gravity="center"
+                android:padding="10dp"
+                android:textColor="@color/black_20"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/ivTitleName"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="4.0dip"
+                android:layout_marginRight="96.0dip"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:singleLine="true"
+                android:text="@string/plot_list"
+                android:textColor="@color/white"
+                android:textSize="19.0sp" />
+
+            <LinearLayout 
+                 android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="5dp"
+                android:orientation="horizontal"
+                >
+                 <TextView
+                android:id="@+id/right_search"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:drawableLeft="@drawable/search_submit_up"
+                android:padding="10dp"
+                android:textColor="@color/white"
+                android:layout_toLeftOf="@+id/rightTv"
+                />
+
+            <TextView
+                android:id="@+id/rightTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingBottom="5dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:paddingTop="5dp"
+                android:textColor="@color/white"
+                />
+                
+                
+            </LinearLayout>
+           
+        </RelativeLayout>
+
+        <ScrollView
+            android:id="@+id/main_scroll"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical" >
+
+                <include
+                    android:id="@+id/layout_main_header"
+                    layout="@layout/item_main_header" />
+
+                <com.zte.agricul.view.ListViewToScrollView
+                    android:id="@+id/main_data_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:cacheColorHint="#00000000"
+                    android:divider="@null"
+                    android:dividerHeight="0.0dip"
+                    android:fadingEdge="none"
+                    android:focusable="false"
+                    android:listSelector="#00000000"
+                    android:scrollingCache="false" />
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/net_error"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:drawableTop="@drawable/wifi"
+        android:gravity="center"
+        android:text="@string/click_refresh"
+        android:visibility="gone" />
+
+    <include
+        android:id="@+id/layout_loading"
+        layout="@layout/custom_loding_dialog_layout" />
+
+</RelativeLayout>

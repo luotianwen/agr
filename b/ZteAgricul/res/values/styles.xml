@@ -1,0 +1,44 @@
+<resources>
+
+    <!--
+        Base application theme, dependent on API level. This theme is replaced
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+    -->
+    <style name="AppBaseTheme" parent="Theme.AppCompat.Light">
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        -->
+    </style>
+
+    <!-- Application theme. -->
+    <style name="AppTheme" parent="AppBaseTheme">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+    <!-- 登录文本框样式 -->
+    <style name="Widget_InputEditText">
+        <item name="android:layout_width">260dp</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:layout_marginLeft">20dp</item>
+        <item name="android:layout_marginRight">20dp</item>
+        <item name="android:paddingLeft">5dp</item>
+        <item name="android:textColorHint">@color/grey</item>
+        <item name="android:textSize">15dp</item>
+    </style>
+
+    <style name="CustomCheckboxTheme" parent="@android:style/Widget.CompoundButton.CheckBox">
+        <item name="android:button">@drawable/checkbox_style</item>
+    </style>
+
+    <style name="style0">
+        <item name="android:textSize">24dp</item>
+        <item name="android:textColor">@color/green</item>
+    </style>
+
+    <style name="style1">
+        <item name="android:textSize">13dp</item>
+        <item name="android:textColor">@color/black_20</item>
+    </style>
+
+</resources>

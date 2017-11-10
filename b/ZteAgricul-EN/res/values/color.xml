@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="bocop_dialog_bg">#77000000</color>
+    <!-- 上传图片添加的颜色 -->
+    <color name="none_color">#00000000</color>
+    <color name="plugin_camera_black">#000000</color>
+    <color name="albumback">#E1E0DE</color>
+    <color name="transparent">#0000</color>
+    <color name="content_bg">#f7f7f7</color>
+    <color name="white_bg">#e5e5e5</color>
+    <color name="grey_line">#cecece</color>
+    <color name="grey">#9fa0a0</color>
+    <color name="grey_10">#f1f1f1</color>
+    <color name="pressed_blue">#3BA4E7</color>
+    <color name="grey_set">#808080</color>
+    <!-- 灰色 -->
+    <color name="creamywhite">#f7f7f7</color>
+    <!-- 灰色_10 -->
+    <color name="white_10">#f8f8f8</color>
+    <!-- 米白色 -->
+    <color name="red">#ff0000</color>
+    <!-- 红色 -->
+    <color name="red_20">#f61c4b</color>
+    <!-- 白色 -->
+    <color name="white">#ffffff</color>
+    <color name="grey_30">#f4f9f3</color>
+    <color name="grey_20">#f4f9f3</color>
+    <color name="grey_7f">#7f7f7f</color>
+    <color name="grey_b4">#b4b4b4</color>
+    <color name="green_5e">#5e8f36</color>
+    <color name="green_5b">#5b8e38</color>
+    <!-- 绿色_85 -->
+    <color name="green_85">#85b83d</color>
+    <color name="green_tr_5e">#e55e8f36</color>
+    <!-- 黑色 -->
+    <color name="black">#000000</color>
+    <!-- 黑色 -->
+    <color name="dark">#363838</color>
+    <!-- 黑色 20 -->
+    <color name="black_20">#333333</color>
+    <color name="black_30">#393a3f</color>
+    <!-- 深黑色 -->
+    <color name="mdark">#5e5e5e</color>
+    <!-- 深黑色 -->
+    <color name="green">#5f9236</color>
+    <color name="fault_detail_green">#73ab3d</color>
+    <color name="tab_selected_bg">#1b7462</color>
+    <color name="transdark">#777777</color>
+    <color name="transparent_background">#99000000</color>
+    <!-- 橘黄色 -->
+    <color name="orange">#ffa900</color>
+    <!-- 乳白色 -->
+    <color name="cutofrule">#e5e5e5</color>
+    <!-- 分割线 -->
+    <color name="titlecolor">#9999</color>
+    <!-- 演唱会标题颜色 -->
+    <color name="timecolor">#898989</color>
+    <!-- 演唱会列表时间颜色 -->
+    <color name="findmore">#b3b3b3</color>
+    <!-- 查看更多颜色 -->
+    <color name="detail">#666666</color>
+    <!-- 详情颜色 -->
+    <color name="canchou">#ff9402</color>
+    <!-- 参筹 -->
+    <color name="qiangding">#ff5000</color>
+    <!-- 抢订 -->
+    <color name="addresscolor">#999999</color>
+    <!-- 地址颜色 -->
+    <color name="zhifucolor">#666666</color>
+    <!-- 支付方式颜色 -->
+    <color name="blue">#1482fb</color>
+    <!-- 浅蓝色 -->
+    <!-- 透明 -->
+    <color name="wheel_timebtn_nor">#54a3fa</color>
+    <color name="wheel_timebtn_pre">#cccccc</color>
+    <!-- 淡红色 -->
+    <color name="pre_red">#fd3515</color>
+    <!-- 淡蓝色 -->
+    <color name="pre_blue">#1482fb</color>
+    <!-- 淡蓝色1 -->
+    <color name="blue_pro">#9dbeb7</color>
+    <!-- 灰白色 -->
+    <color name="swhite">#f0f0f0</color>
+    <!-- 深红色 -->
+    <color name="red_10">#d94400</color>
+    <!-- 深橘色 -->
+    <color name="orange_10">#d97e02</color>
+    <color name="province_line_border">#C7C7C7</color>
+    <color name="join_circle">#cccccc</color>
+    <color name="navpage">#FFE1E8EB</color>
+    <!-- 高斯模糊背景 -->
+    <color name="gause">#1a1a1a</color>
+    <color name="view_line">#f3f3f3</color>
+    <color name="edit_hint_color">#999999</color>
+    <color name="nave_selected">#ff357db4</color>
+
+    <color name="crop_chart_bg">#ADD8E6</color>
+    
+    <color name="crop_chart_line1">#008B45</color>
+    <color name="crop_chart_line2">#EE7600</color>
+        <!-- 暗灰色 -->
+    <color name="dimgrey">#696969</color>
+    <color name="gray">#DBDBDB</color>
+           <!-- 雪白色 -->
+    <color name="floralwhite">#FFFAF0</color>
+</resources>

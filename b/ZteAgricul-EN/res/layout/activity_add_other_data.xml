@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey_10"
+    android:orientation="vertical" >
+
+    <include
+        android:id="@+id/layout_top"
+        layout="@layout/custom_commen_title"
+        android:focusable="true" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:textColor="@color/grey_7f"
+            android:textSize="@dimen/text_size_15"
+            android:id="@+id/time_selected" />
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dp"
+            android:text="@string/jointing"
+            android:textColor="@color/green_5b"
+            android:textSize="@dimen/text_size_15" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dp"
+            android:layout_toLeftOf="@+id/textView1"
+            android:text="@string/growth_stage"
+            android:textColor="@color/grey_b4"
+            android:textSize="@dimen/text_size_15" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp" 
+        android:background="@color/white"
+        android:padding="15dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/grey_7f" 
+            android:textSize="@dimen/text_size_14"
+            android:text="今天下暴雨   持续32分钟    降雨量 30mm"/>
+        <ImageView 
+             android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/main_item_img"
+            android:layout_marginTop="10dp"
+            />
+    </LinearLayout>
+
+</LinearLayout>

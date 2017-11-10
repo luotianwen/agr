@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical" 
+    android:gravity="center_horizontal">
+
+    <include
+        android:id="@+id/layout_top"
+        layout="@layout/custom_commen_title"
+        android:focusable="true" />
+
+    <TextView 
+        android:id="@+id/user_name"
+        android:layout_width="260dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/black_30"
+        android:textSize="18sp"
+        android:padding="5dp"
+        />
+    <TextView 
+        android:id="@+id/user_duty"
+        android:layout_width="260dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/black_30"
+        android:textSize="18sp"
+        android:padding="5dp"
+        />
+    <TextView 
+         android:id="@+id/user_area"
+        android:layout_width="260dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/black_30"
+        android:textSize="18sp"
+        android:padding="5dp"
+        />
+    <TextView 
+        android:id="@+id/user_phone"
+        android:layout_width="260dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/black_30"
+        android:textSize="18sp"
+        android:padding="5dp"
+        />
+    <TextView 
+        android:id="@+id/user_email"
+        android:layout_width="260dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/black_30"
+        android:textSize="18sp"
+        android:padding="5dp"
+        />
+    
+    <Button
+        android:id="@+id/exit_btn"
+        android:layout_width="260dp"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="30dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/input_login_bg"
+        android:text="@string/exit"
+        android:textColor="@color/white"
+        android:textSize="18sp" />
+
+
+</LinearLayout>

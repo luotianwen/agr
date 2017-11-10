@@ -1,0 +1,2 @@
+1.ZteAgricul文件是中兴农业项目源码
+2.android-support-v7-appcompat和XCL-Charts 是项目依赖包
