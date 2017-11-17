@@ -3,6 +3,7 @@ package com.zte.agricul.adapter;
 import java.util.List;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,13 +27,13 @@ public class PlotCropAllListAdapter extends BaseAdapter {
 		this.mContext = mContext;
 		this.cityBeans = cityBeans;
 		mLayoutInflater = LayoutInflater.from(mContext);
-		ZteApplication.bus.register(mContext);
+		 ZteApplication.bus.register(mContext);
 	}
 
 	public int getCount() {
 		// TODO Auto-generated method stub
 		// Log.d("TAG", "adapter.size() -" + mNewsListContent.size());
-		return 3;
+		return cityBeans.size();
 	}
 
 	public Object getItem(int position) {
@@ -50,14 +51,14 @@ public class PlotCropAllListAdapter extends BaseAdapter {
 		if (viewRoot == null) {
 			viewRoot = mLayoutInflater.inflate(R.layout.item_crop_all_list, null);
 			viewHolder = new ViewHolder();
-			viewHolder.pop_area = (TextView) viewRoot
-					.findViewById(R.id.pop_area);
+			viewHolder.pop_area = (TextView) viewRoot.findViewById(R.id.pop_area);
 			viewRoot.setTag(viewHolder);
 		} else {
 			viewHolder = (ViewHolder) viewRoot.getTag();
 		}
-		System.out.println("aaaaaaaaaaa====="+cityBeans.size());
-		System.out.println(position+"aaaaaaaaaaa====="+cityBeans.get(position).getName());
+
+		System.out.println("bbb====="+cityBeans.size());
+		System.out.println("ccc==position"+position+"=="+cityBeans.get(position).getName());
 		viewHolder.pop_area.setText(cityBeans.get(position).getName());
 		return viewRoot;
 	}

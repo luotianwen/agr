@@ -82,59 +82,6 @@ public class EditPlotInfoActivity extends BaseActivity implements
 	private int selectedPs = 0 ;
 	
 	private int selectedcount = 0 ;
-	private Handler mHandler = new Handler() {
-
-		@Override
-		public void handleMessage(Message msg) {
-			// TODO Auto-generated method stub
-			if (isFinish) {
-				return;
-			}
-			switch (msg.what) {
-			case REFRESH_TEXT:
-				progressView.setVisibility(View.GONE);
-				finish();
-				ZteApplication.bus.post(BusEvent.REFRESH_PLOT_EVENT);
-
-				Util.showToast(getApplicationContext(), (String) msg.obj,
-						Toast.LENGTH_SHORT);
-				break;
-			case NET_ERROR:
-				progressView.setVisibility(View.GONE);
-				Util.showToast(getApplicationContext(), (String) msg.obj,
-						Toast.LENGTH_SHORT);
-				break;
-			case REFRESH_LIST_TEXT:
-				progressView.setVisibility(View.GONE);
-				CropTypeList.clear();
-				CropBrandAllList.clear();
-				CropTypeList.addAll(mListBean.getResult().getCropTypeList());
-				CropBrandAllList.addAll(mListBean.getResult()
-						.getCropBrandList());
-				getCropBrandList(CropTypeList, CropBrandAllList);
-				CropBrandSmallList = CropBrandList.get(0);
-				cropsBrandAdapter = new PlotCropAllListAdapter(mContext,
-						CropBrandSmallList);
-				cropsBrandSpinner.setAdapter(cropsBrandAdapter);
-
-				cropTypeid = CropTypeList.get(0).getID();
-				cropBrandid = CropBrandAllList.get(0).getID();
-				cropUserid = UsersList.get(0).getID();
-				cropAdditiveid = CropAdditiveList.get(0).getID();
-				cropsTypeAdapter.notifyDataSetChanged();
-				break;
-			case 4:
-				progressView.setVisibility(View.GONE);
-				net_error.setVisibility(View.VISIBLE);
-				Util.showToast(getApplicationContext(), (String) msg.obj,
-						Toast.LENGTH_SHORT);
-				break;
-			}
-
-			// listView.onRefreshComplete();
-		}
-
-	};
 
 	public void onCreate(Bundle savedinstancestate) {
 		super.onCreate(savedinstancestate);
@@ -154,7 +101,7 @@ public class EditPlotInfoActivity extends BaseActivity implements
 				.getSerializableExtra("CropAdditive");
 		plotBean=(PlotBean)getIntent().getSerializableExtra("bean");
 		getCropBrandList(CropTypeList, CropBrandAllList);
-		CropBrandSmallList = CropBrandList.get(0);
+		//CropBrandSmallList = CropBrandList.get(0);
 		getListData();
 		initView();
 		setData();
@@ -174,14 +121,16 @@ public class EditPlotInfoActivity extends BaseActivity implements
 		for (int i = 0; i < UsersList.size(); i++) {
 			if (UsersList.get(i).getName().equals(plotBean.getSow_UserName())) {
 				userSpinner.setSelection(i);
-				cropUserid = UsersList.get(i).getID();
+				break;
+				//cropUserid = UsersList.get(i).getID();
 			}
 		}
 		
 		for (int i = 0; i < CropAdditiveList.size(); i++) {
 			if (CropAdditiveList.get(i).getName().equals(plotBean.getCrop_Additive())) {
 				additive_spinner.setSelection(i);
-				cropAdditiveid = CropAdditiveList.get(i).getID();
+				//cropAdditiveid = CropAdditiveList.get(i).getID();
+				break;
 			}
 		}
 		
@@ -189,11 +138,12 @@ public class EditPlotInfoActivity extends BaseActivity implements
 			if (CropTypeList.get(i).getID().equals(plotBean.getCrop_Type_ID())) {
 				cropsTypeSpinner.setSelection(i);
 				areaPostion=i;
-				cropTypeid = CropTypeList.get(i).getID();
+				break;
+				/*cropTypeid = CropTypeList.get(i).getID();
 				CropBrandSmallList = CropBrandList.get(i);
-//				cropsBrandAdapter = new PlotCropAllListAdapter(mContext,
-//						CropBrandSmallList);
-//				cropsBrandSpinner.setAdapter(cropsBrandAdapter);
+ 				cropsBrandAdapter = new PlotCropAllListAdapter(mContext,
+ 						CropBrandSmallList);
+ 				cropsBrandSpinner.setAdapter(cropsBrandAdapter);*/
 				
 			}
 		}
@@ -202,9 +152,10 @@ public class EditPlotInfoActivity extends BaseActivity implements
 			System.out.println(plotBean.getCrop_Brands_ID()+"======"+CropBrandList.get(areaPostion).get(i).getID());
 			if (CropBrandList.get(areaPostion).get(i).getID().equals(plotBean.getCrop_Brands_ID())) {
 				cropsBrandSpinner.setSelection(i);
-				cropBrandid =CropBrandList.get(areaPostion).get(i).getID();
-				System.out.println(CropBrandList.get(areaPostion).get(i).getName());
+				/*cropBrandid =CropBrandList.get(areaPostion).get(i).getID();
+				System.out.println(CropBrandList.get(areaPostion).get(i).getName());*/
 				selectedPs =i;
+				break;
 			}
 		}
 	}
@@ -220,7 +171,7 @@ public class EditPlotInfoActivity extends BaseActivity implements
 				if (CropBrandAllList.get(j).getCropTypeID()
 						.equals(CropTypeList.get(i).getID())) {
 					aa.add(CropBrandAllList.get(j));
-					System.out.println(i + "==j=="+ CropBrandAllList.get(j).getName());
+					//System.out.println(i + "==j=="+ CropBrandAllList.get(j).getName());
 				}
 			}
 			CropBrandList.add(aa);
@@ -265,28 +216,22 @@ public class EditPlotInfoActivity extends BaseActivity implements
 		cropsBrandSpinner = (Spinner) findViewById(R.id.crops_brand_spinner);
 		cropsTypeSpinner = (Spinner) findViewById(R.id.crops_type_spinner);
 		additive_spinner = (Spinner) findViewById(R.id.additive_spinner);
-		userAdapter = new PlotCropAllListAdapter(mContext, UsersList);
-		cropsTypeAdapter = new PlotCropAllListAdapter(mContext, CropTypeList);
-		cropsBrandAdapter = new PlotCropAllListAdapter(mContext,
-				CropBrandSmallList);
-		CropAdditiveListAdapter = new PlotCropAllListAdapter(mContext,
-				CropAdditiveList);
-		// 将adapter 添加到spinner中
-		userSpinner.setAdapter(userAdapter);
-		// 将adapter 添加到spinner中
-		cropsTypeSpinner.setAdapter(cropsTypeAdapter);
-		// 将adapter 添加到spinner中
-		cropsBrandSpinner.setAdapter(cropsBrandAdapter);
-		additive_spinner.setAdapter(CropAdditiveListAdapter);
 
-		// 添加事件Spinner事件监听
+		userAdapter = new PlotCropAllListAdapter(mContext, UsersList);
+		userSpinner.setAdapter(userAdapter);
 		userSpinner.setOnItemSelectedListener(new SpinnerSelectedListener(1));
-		cropsTypeSpinner.setOnItemSelectedListener(new SpinnerSelectedListener(
-				2));
-		cropsBrandSpinner
-				.setOnItemSelectedListener(new SpinnerSelectedListener(3));
-		additive_spinner.setOnItemSelectedListener(new SpinnerSelectedListener(
-				4));
+
+		cropsTypeAdapter = new PlotCropAllListAdapter(mContext, CropTypeList);
+		cropsTypeSpinner.setAdapter(cropsTypeAdapter);
+		cropsTypeSpinner.setOnItemSelectedListener(new SpinnerSelectedListener(2));
+
+		/*cropsBrandAdapter = new PlotCropAllListAdapter(mContext,CropBrandSmallList);
+		cropsBrandSpinner.setAdapter(cropsBrandAdapter);*/
+		cropsBrandSpinner.setOnItemSelectedListener(new SpinnerSelectedListener(3));
+
+		CropAdditiveListAdapter = new PlotCropAllListAdapter(mContext,CropAdditiveList);
+		additive_spinner.setAdapter(CropAdditiveListAdapter);
+        additive_spinner.setOnItemSelectedListener(new SpinnerSelectedListener(4));
 
 		selectTime = (TextView) findViewById(R.id.select_time);
 		selectTime.setOnClickListener(this);
@@ -318,22 +263,27 @@ public class EditPlotInfoActivity extends BaseActivity implements
 				cropUserid = UsersList.get(position).getID();
 
 			} else if (type == 2) {
+				//nongzuoweu
 				CropBrandSmallList = CropBrandList.get(position);
 				cropBrandid = CropBrandSmallList.get(0).getID();
 				cropTypeid = CropTypeList.get(position).getID();
-				cropsBrandAdapter = new PlotCropAllListAdapter(mContext,
-						CropBrandSmallList);
-				cropsBrandSpinner.setAdapter(cropsBrandAdapter);
+
+					cropsBrandAdapter = new PlotCropAllListAdapter(mContext,
+							CropBrandSmallList);
+					cropsBrandSpinner.setAdapter(cropsBrandAdapter);
+
 				System.out.println("==" + cropBrandid);
 			} else if (type == 4) {
 				cropAdditiveid = CropAdditiveList.get(position).getID();
 			} else  if (type == 3) {
+				//pingpai
 				System.out.println("position==" + position);
 				cropBrandid = CropBrandSmallList.get(position).getID();
-				
+				System.out.println("selectedcount1==" + selectedcount);
 				selectedcount ++;
 				if (selectedcount==2) {
-					cropsBrandSpinner.setSelection(selectedPs,true);
+					System.out.println("selectedcount2==" + selectedcount);
+					//cropsBrandSpinner.setSelection(selectedPs,true);
 				}
 			}
 		}
@@ -554,4 +504,58 @@ public class EditPlotInfoActivity extends BaseActivity implements
 		isFinish = true;
 		ZteApplication.bus.unregister(this);
 	}
+	private Handler mHandler = new Handler() {
+
+		@Override
+		public void handleMessage(Message msg) {
+			// TODO Auto-generated method stub
+			if (isFinish) {
+				return;
+			}
+			switch (msg.what) {
+				case REFRESH_TEXT:
+					progressView.setVisibility(View.GONE);
+					finish();
+					ZteApplication.bus.post(BusEvent.REFRESH_PLOT_EVENT);
+
+					Util.showToast(getApplicationContext(), (String) msg.obj,
+							Toast.LENGTH_SHORT);
+					break;
+				case NET_ERROR:
+					progressView.setVisibility(View.GONE);
+					Util.showToast(getApplicationContext(), (String) msg.obj,
+							Toast.LENGTH_SHORT);
+					break;
+				case REFRESH_LIST_TEXT:
+					progressView.setVisibility(View.GONE);
+					CropTypeList.clear();
+					CropBrandAllList.clear();
+					CropTypeList.addAll(mListBean.getResult().getCropTypeList());
+					CropBrandAllList.addAll(mListBean.getResult()
+							.getCropBrandList());
+					getCropBrandList(CropTypeList, CropBrandAllList);
+					CropBrandSmallList = CropBrandList.get(0);
+					cropsBrandAdapter = new PlotCropAllListAdapter(mContext,
+							CropBrandSmallList);
+					cropsBrandSpinner.setAdapter(cropsBrandAdapter);
+
+					cropTypeid = CropTypeList.get(0).getID();
+					cropBrandid = CropBrandAllList.get(0).getID();
+					cropUserid = UsersList.get(0).getID();
+					cropAdditiveid = CropAdditiveList.get(0).getID();
+					cropsTypeAdapter.notifyDataSetChanged();
+					break;
+				case 4:
+					progressView.setVisibility(View.GONE);
+					net_error.setVisibility(View.VISIBLE);
+					Util.showToast(getApplicationContext(), (String) msg.obj,
+							Toast.LENGTH_SHORT);
+					break;
+			}
+
+			// listView.onRefreshComplete();
+		}
+
+	};
+
 }
